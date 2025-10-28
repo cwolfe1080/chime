@@ -1,33 +1,42 @@
 import pyxel
 
 # Define the game class
-class App:
+class Title:
     def __init__(self):
-        # 1. Initialize
-        pyxel.init(160, 120, "Chime")
-
-        # Load assets
-        pyxel.load("assets.pyxres") 
-        
-        # Initialize a position variable for the sprite
-        self.x = 10
-        self.y = 10
-        
-        # 3. Start the game loop
-        pyxel.run(self.update, self.draw)
+        pass      
 
     def update(self):
-        # Handle game logic (e.g., movement)
-        if pyxel.btnp(pyxel.KEY_Q):
+        if pyxel.btnp(pyxel.KEY_ESCAPE):
             pyxel.quit()
         
-        # Simple movement: move the sprite to the right
-        self.x = (self.x + 1) % 160 
 
     def draw(self):
-        # This function handles all rendering
-        pyxel.cls(0)
         pyxel.text(50, 50, "chime", 9)
 
 # Start the game
-App()
+class Game:
+    def __init__(self):
+        pyxel.init(160, 120, "chime")  
+        # Load inital game assets
+        pyxel.load("title.pyxres") 
+
+        self.level = 0 # Initilize level
+        self.title = Title() # Start title screen
+
+    def update(self):
+        if self.level == 0:
+            self.title.update()
+        elif self.level == 1:
+            if hasattr(self, "title"):
+                del self.title
+            # pyxel.load("next_level.pyxres")
+    
+    def draw(self):
+        pyxel.cls(0)
+        if self.level == 0:
+            self.title.draw()
+        elif self.level == 1:
+            pyxel.text(80, 100, "Loading...")
+            
+game = Game()
+pyxel.run(game.update, game.draw)
