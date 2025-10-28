@@ -58,45 +58,6 @@
         <mxCell id="LeicX2cD45EZayEKqath-17" value="Oh and if you&#39;re wondering who Craig Lee Thomas is, it&#39;s the voice actor for John Helldiver in the Helldivers 2 intro scene. Just thought I&#39;d make it a little funny. Anyways, get ready for the journey of a lifetime. Oh, and get ready for art. This is about to be so painful." style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="690" y="30" width="120" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LeicX2cD45EZayEKqath-19" target="LeicX2cD45EZayEKqath-20" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-19" value="General game structures and tasks:" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="620" y="310" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LeicX2cD45EZayEKqath-20" target="LeicX2cD45EZayEKqath-22" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="1wYPcUTcYn6zx2gRJm-w-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LeicX2cD45EZayEKqath-20" target="1wYPcUTcYn6zx2gRJm-w-5" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-20" value="Design story" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="620" y="400" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LeicX2cD45EZayEKqath-22" target="LeicX2cD45EZayEKqath-24" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="1wYPcUTcYn6zx2gRJm-w-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LeicX2cD45EZayEKqath-22" target="1wYPcUTcYn6zx2gRJm-w-7" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-22" value="Design art" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="620" y="490" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LeicX2cD45EZayEKqath-24" target="LeicX2cD45EZayEKqath-26" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="1wYPcUTcYn6zx2gRJm-w-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LeicX2cD45EZayEKqath-24" target="1wYPcUTcYn6zx2gRJm-w-7" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-24" value="Design items/collectibles and in game objects such as shrines" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="620" y="580" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="1wYPcUTcYn6zx2gRJm-w-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LeicX2cD45EZayEKqath-26" target="1wYPcUTcYn6zx2gRJm-w-7" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="LeicX2cD45EZayEKqath-26" value="Code the game" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="620" y="670" width="120" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="1wYPcUTcYn6zx2gRJm-w-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1wYPcUTcYn6zx2gRJm-w-1" target="1wYPcUTcYn6zx2gRJm-w-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -108,12 +69,6 @@
         </mxCell>
         <mxCell id="1wYPcUTcYn6zx2gRJm-w-3" value="Also, not only do you have to scout for food, but you also might have to fight monsters and other creatures that you encounter while in the depths. I&#39;m naming the studio that made this game, uncommon studios." style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1230" y="50" width="120" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="1wYPcUTcYn6zx2gRJm-w-5" value="Generally complete. We&#39;ll come up with more as we go." style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="480" y="400" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="1wYPcUTcYn6zx2gRJm-w-7" value="All of these kind of go together and happen at the same time." style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="470" y="490" width="120" height="240" as="geometry" />
         </mxCell>
         <mxCell id="fSI3svkAlForpk4qqhjv-1" value="And also, to get a lot of gameplay time, it&#39;s important that we make side quests.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Finally, if you need more information, check out the chime folder on iCloud or the Paper app&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1390" y="50" width="120" height="160" as="geometry" />
