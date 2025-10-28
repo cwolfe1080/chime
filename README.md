@@ -1,2 +1,2 @@
-# literate-octo-potato
-A game
+# chime
+chime is a single player story game set in an odd dystopian future.
