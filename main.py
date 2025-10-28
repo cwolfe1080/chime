@@ -3,11 +3,10 @@ import pyxel
 # Define the game class
 class App:
     def __init__(self):
-        # 1. Initialize the screen (160x120 pixels)
-        pyxel.init(160, 120, "Smiley Game")
+        # 1. Initialize
+        pyxel.init(160, 120, "Chime")
 
-        # 2. Load your assets file
-        # 🟢 CORRECTED LINE: Pass the filename string as the first argument
+        # Load assets
         pyxel.load("assets.pyxres") 
         
         # Initialize a position variable for the sprite
@@ -27,12 +26,8 @@ class App:
 
     def draw(self):
         # This function handles all rendering
-        pyxel.cls(0) # Clear the screen to color 0 (black)
-        
-        # Draw a sprite: 
-        # (x-pos, y-pos, Image Bank 0, u-coord, v-coord, width, height)
-        # u=0, v=0 means the top-left 8x8 pixels in the Image Bank 0
-        pyxel.blt(self.x, self.y, 0, 0, 0, 8, 8) 
+        pyxel.cls(0)
+        pyxel.text(50, 50, "chime", 9)
 
 # Start the game
 App()
