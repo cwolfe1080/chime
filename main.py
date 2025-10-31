@@ -7,6 +7,8 @@ def setColors(file):
         pyxel.colors[8] = 0x8B0000  # Dark red
     elif file == "story.pyxres":
         pyxel.colors[8] = 0x8B0000  # Dark red
+    elif file == "intro.pyxres":
+        pyxel.colors[8] = 0x8B0000  # Dark red
 
 # All Pyxel functions
 class Title:
@@ -118,6 +120,16 @@ class Story:
             self.typewriter.draw()
             pyxel.text(43, 110, "Press space to skip", 8)
 
+class IGUI:
+    def __init__(self, game):
+        self.game = game
+
+    def update(self):
+        pass
+
+    def draw(self):
+        pass
+
 
 
 
@@ -145,7 +157,17 @@ class Game:
         elif self.level == 2:
             self.story.update()
         elif self.level == 3:
-            pass # start here
+            if hasattr(self, "story"):
+                del self.story
+            pyxel.load("intro.pyxres")
+            setColors("intro.pyxres")
+            self.IGUI = IGUI(self) # startup In-Game User Interface
+            # put item loading startup here
+            # put intro running startup here
+            self.level = 4
+        elif self.level == 4:
+            pass
+            # put update of IGUI, item loading, intro, and more here
     
     def draw(self):
         pyxel.cls(0)
@@ -156,7 +178,10 @@ class Game:
         elif self.level == 2:
             self.story.draw()
         elif self.level == 3:
-            pass # start here
+            pyxel.text(63, 55, "Loading...", 7)
+        elif self.level == 4:
+            pass
+            # put draw of IGUI, item loading, intro, and more here
             
 game = Game()
 pyxel.run(game.update, game.draw)
