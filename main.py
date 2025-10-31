@@ -149,13 +149,16 @@ class IGUI:
         for i in range(len(self.draw_hearts)):
             match self.draw_hearts[num]:
                 case 2:
-                    pyxel.blt(x, y, 0, 16, 0, 9, 7, None, None, 1)
+                    pyxel.blt(x, y, 0, 16, 0, 9, 7, 0, None, 1)
                 case 1:
-                    pyxel.blt(x, y, 0, 25, 0, 9, 7, None, None, 1)
+                    pyxel.blt(x, y, 0, 25, 0, 9, 7, 0, None, 1)
                 case 0:
-                    pyxel.blt(x, y, 0, 34, 0, 9, 7, None, None, 1)
+                    pyxel.blt(x, y, 0, 34, 0, 9, 7, 0, None, 1)
             x+=10
             num+=1
+        # Draw backpack and key tip
+        pyxel.blt(140, 100, 0, 8, 24, 19, 16, 0, None, 1) # backpack
+        pyxel.blt(132, 92, 0, 29, 27, 9, 9, 0, None, 1) # key tip
 
 
 
