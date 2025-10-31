@@ -79,19 +79,30 @@ class Story:
     def __init__(self, game):
         self.game = game
         self.scene = 0
+        self.skip = False
     
     def update(self):
         if self.scene == 0:
-            self.typewriter = Typewriter("Long ago, in an ancient land,\ncivilizations and kingdoms prospered.\nThere was peace in the land. Until,\nan ancient power of evil fell upon\nthe land, causing blight to appear\neverywhere. The blight consumed the\ncrops and vegetation, and rotted\nstructures, leaving many homeless and\nstarving.", 10, 10, 8, 1, 10) # Speed is at 1 for testing and development, change back to 4. Also, wait is at 10 for testing and development, change back to 3000.
+            self.typewriter = Typewriter("Long ago, in an ancient land,\ncivilizations and kingdoms prospered.\nThere was peace in the land. Until,\nan ancient power of evil fell upon\nthe land, causing blight to appear\neverywhere. The blight consumed the\ncrops and vegetation, and rotted\nstructures, leaving many homeless and\nstarving.", 10, 10, 8, 4, 3000)
             self.scene = 1
         elif self.scene == 1:
+            if pyxel.btnp(pyxel.KEY_SPACE) and not self.typewriter.done:
+                self.typewriter.visible_chars = len(self.typewriter.full_text)
+                self.typewriter.done_typing = True
+                self.typewriter.wait_counter = 0
+                self.typewriter.done = True
             self.typewriter.update()
             if self.typewriter.done:
                 self.scene = 2
         elif self.scene == 2:
-            self.typewriter = Typewriter("Life was difficult and food was near\nimpossible to find. One day, you\nleave your family at your crumbling\nhome and go searching for food. While\nhunting for deer, you fall into a\nsinkhole, and fall hundreds of\nfeet into the ground. You awake, in\nshallow water. You find that you're\nin a cave, with blight covering the\nwalls and consuming all living things.", 10, 10, 8, 1, 10) # Speed is at 1 for testing and development, change back to 4. Also, wait is at 10 for testing and development, change back to 5000.
+            self.typewriter = Typewriter("Life was difficult and food was near\nimpossible to find. One day, you\nleave your family at your crumbling\nhome and go searching for food. While\nhunting for deer, you fall into a\nsinkhole, and fall hundreds of\nfeet into the ground. You awake, in\nshallow water. You find that you're\nin a cave, with blight covering the\nwalls and consuming all living things.", 10, 10, 8, 4, 5000)
             self.scene = 3
         elif self.scene == 3:
+            if pyxel.btnp(pyxel.KEY_SPACE) and not self.typewriter.done:
+                self.typewriter.visible_chars = len(self.typewriter.full_text)
+                self.typewriter.done_typing = True
+                self.typewriter.wait_counter = 0
+                self.typewriter.done = True
             self.typewriter.update()
             if self.typewriter.done:
                 self.scene = 4
@@ -102,8 +113,10 @@ class Story:
     def draw(self):
         if self.scene == 1:
             self.typewriter.draw()
+            pyxel.text(43, 110, "Press space to skip", 8)
         if self.scene == 3:
             self.typewriter.draw()
+            pyxel.text(43, 110, "Press space to skip", 8)
 
 
 
