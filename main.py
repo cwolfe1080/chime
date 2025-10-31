@@ -1,4 +1,5 @@
 import pyxel
+import math
 
 # All other functions
 
@@ -123,13 +124,38 @@ class Story:
 class IGUI:
     def __init__(self, game):
         self.game = game
+        self.lastHearts = 0
+        self.draw_hearts = []
 
     def update(self):
-        pass
+        # Process heart drawing
+        if not self.lastHearts == self.game.Health: # We only need to process it if the health has changed
+            self.draw_hearts = []
+            for i in range(self.game.maxHealth // 2):
+                heart_value = self.game.Health - (i * 2)
+
+                if heart_value >= 2:
+                    self.draw_hearts.append(2)
+                elif heart_value == 1:
+                    self.draw_hearts.append(1)
+                else:
+                    self.draw_hearts.append(0)
+            self.lastHeats = self.game.Health
+            
 
     def draw(self):
-        pass
-
+        # Draw hearts
+        x, y, num = 5, 5, 0
+        for i in range(len(self.draw_hearts)):
+            match self.draw_hearts[num]:
+                case 2:
+                    pyxel.blt(x, y, 0, 16, 0, 9, 7, None, None, 1)
+                case 1:
+                    pyxel.blt(x, y, 0, 25, 0, 9, 7, None, None, 1)
+                case 0:
+                    pyxel.blt(x, y, 0, 34, 0, 9, 7, None, None, 1)
+            x+=10
+            num+=1
 
 
 
@@ -140,6 +166,8 @@ class Game:
         pyxel.load("title.pyxres") 
         setColors("title.pyxres")
 
+        self.maxHealth = 6 # Initialize maximum health
+        self.Health = 6 # Initliaze health
         self.level = 0 # Initilize level
         self.title = Title(self) # Start title screen
         pyxel.mouse(True) # Show mouse cursor
@@ -166,7 +194,7 @@ class Game:
             # put intro running startup here
             self.level = 4
         elif self.level == 4:
-            pass
+            self.IGUI.update()
             # put update of IGUI, item loading, intro, and more here
     
     def draw(self):
@@ -180,7 +208,7 @@ class Game:
         elif self.level == 3:
             pyxel.text(63, 55, "Loading...", 7)
         elif self.level == 4:
-            pass
+            self.IGUI.draw()
             # put draw of IGUI, item loading, intro, and more here
             
 game = Game()
