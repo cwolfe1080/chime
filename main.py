@@ -126,6 +126,8 @@ class IGUI:
         self.game = game
         self.lastHearts = 0
         self.draw_hearts = []
+        self.ePressedLastFrame = False
+
 
     def update(self):
         # Process heart drawing
@@ -141,6 +143,20 @@ class IGUI:
                 else:
                     self.draw_hearts.append(0)
             self.lastHeats = self.game.Health
+        
+        # Process if selected item in hotbar is changed
+        if pyxel.btnp(pyxel.KEY_1):
+            self.game.hotbarItem = 1
+        elif pyxel.btnp(pyxel.KEY_2):
+            self.game.hotbarItem = 2
+        elif pyxel.btnp(pyxel.KEY_3):
+            self.game.hotbarItem = 3
+
+        # Check for open invetory
+        if pyxel.btnp(pyxel.KEY_E):
+            self.ePressedLastFrame = True
+        if pyxel.btnr(pyxel.KEY_E):
+            self.ePressedLastFrame = False
             
 
     def draw(self):
@@ -157,9 +173,23 @@ class IGUI:
             x+=10
             num+=1
         # Draw backpack and key tip
-        pyxel.blt(140, 100, 0, 8, 24, 19, 16, 0, None, 1) # backpack
-        pyxel.blt(132, 92, 0, 29, 27, 9, 9, 0, None, 1) # key tip
+        # Backpack
+        pyxel.blt(140, 100, 0, 8, 24, 19, 16, 0, None, 1)
+        # Key tip
+        if self.ePressedLastFrame:
+            pyxel.blt(132, 93, 0, 38, 27, 9, 9, 0, None, 1)
+        else:
+            pyxel.blt(132, 92, 0, 29, 27, 9, 9, 0, None, 1)
 
+        # Draw hotbar
+        x = 50
+        y = 100
+        for i in range(1, 4):
+            if i == self.game.hotbarItem:
+                pyxel.blt(x, y, 0, 16, 8, 15, 15, 0, None, 1)
+            else:
+                pyxel.blt(x, y, 0, 0, 8, 15, 15, 0, None, 1)
+            x+=20
 
 
 class Game:
@@ -170,8 +200,10 @@ class Game:
         setColors("title.pyxres")
 
         self.maxHealth = 6 # Initialize maximum health
-        self.Health = 6 # Initliaze health
-        self.level = 0 # Initilize level
+        self.Health = 6 # Initialize health
+        self.level = 0 # Initialize level
+        self.inventory = [None] * 27 # Initialize inventory
+        self.hotbarItem = 1 # Initialize selected hotbar item
         self.title = Title(self) # Start title screen
         pyxel.mouse(True) # Show mouse cursor
 
