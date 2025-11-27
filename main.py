@@ -190,6 +190,7 @@ class IGUI:
             else:
                 pyxel.blt(x, y, 0, 0, 8, 15, 15, 0, None, 1)
             x+=20
+        
 
 
 class Game:
