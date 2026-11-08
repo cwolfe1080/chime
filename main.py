@@ -1,3 +1,10 @@
+# title: chime
+# author: cwolfe1080
+# desc: chime is a single player story-action game set in a crippling dystopian future.
+# site: https://github.com/cwolfe1080/chime
+# license: All Rights Reserved
+# version: 1.0
+
 import pyxel
 import math
 
